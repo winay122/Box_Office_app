@@ -4,9 +4,10 @@ import { getShowById } from "../api/tvmaze";
 
 const Show = () => {
 const { showId } = useParams();
-const { data: showData, error: showError } = useQuery(
-    ['show', showId],                                         //query key also written as (queryKey: ['show',showId])
-    () => getShowById(showId))                                //query function also written as (queryFn: getshowById(showId))
+const { data: showData, error: showError } = useQuery({
+    queryKey:['show', showId],                                       
+    queryFn: () => getShowById(showId)
+})                                 
 
 if(showError){
     return <div>We have an Error: {showError.message}</div>
