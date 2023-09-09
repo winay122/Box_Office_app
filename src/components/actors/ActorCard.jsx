@@ -1,7 +1,6 @@
 
 const ActorCard = ({ name, image, gender, country, birthday, deathday }) => {
 
-    console.log(gender);
     return (
         <div>
             <img src={image} alt={name} />
