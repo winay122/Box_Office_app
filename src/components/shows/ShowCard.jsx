@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 const ShowCard = ({ name, image, id, summary, }) => {
 
     const summaryStripped =summary ? 
@@ -15,7 +15,8 @@ const ShowCard = ({ name, image, id, summary, }) => {
                 <p>{summaryStripped}</p>
             </div>
             <div>
-                <Link to={`/show/${id}`}>Read more...</Link>
+                {/* <Link to={`/show/${id}`}>Read more...</Link> */}
+                <a href={`/show/${id}`} target="blank" >Read maore...</a>
                 <button type='button'>Star me</button>
             </div>
         </div>

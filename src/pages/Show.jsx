@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getShowById } from "../api/tvmaze";
 import ShowMainData from "../components/shows/ShowMainData";
@@ -12,7 +12,8 @@ const { data: showData, error: showError } = useQuery({
     queryKey:['show', showId],                                       
     queryFn: () => getShowById(showId),
     refetchOnWindowFocus: false,
-})                                 
+})    
+
 
 if(showError){
     return <div>We have an Error: {showError.message}</div>
@@ -20,6 +21,9 @@ if(showError){
 
 if(showData){
     return <div>
+
+        <Link to="/">Go back to Home</Link>
+
         <ShowMainData 
           image={showData.image}
           name={showData.name}
