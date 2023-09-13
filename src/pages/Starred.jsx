@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom';
+import { useStarredShows } from "../lib/useStarredShows";
 
 const Starred = () => {
-  return (
-    <div>
-      <h1>Starred page</h1>
-      <Link to="/">Go to Home</Link>
-    </div>
-  );
+
+  const [ starredShows ] = useStarredShows()
+
+  return <div>Starred page, starred { starredShows.length }</div>
 };
 
 export default Starred;
