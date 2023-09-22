@@ -12,13 +12,16 @@ const Seasons = ({ seasons }) => {
       <SeasonList>
         {seasons.map(season => (
           <div key={season.id} className="season-item">
-            <div className='left'>
+            <div className="left">
               <p>Seasons {season.number} </p>
               <p>Episode: {season.episodeOrder} </p>
             </div>
 
-            <div className='right'>
-              Aired: <strong>{season.premiereDate}.{season.endDate}</strong>
+            <div className="right">
+              Aired:{' '}
+              <strong>
+                {season.premiereDate}.{season.endDate}
+              </strong>
             </div>
           </div>
         ))}
